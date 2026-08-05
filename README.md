@@ -1,19 +1,12 @@
 # DatasetManager
 
 ## Application de gestion de jeux de données
-
-### Orange Digital Center - Programme P1 IA
-
+###  Orange Digital Center - Programme P1 IA
 ---
-
 # Présentation
-
 DatasetManager est une application console développée en Python dans le cadre de la formation **P1 Intelligence Artificielle**.
-
 L'objectif de cette application est de permettre la gestion d'un catalogue de jeux de données (datasets). Au fil des différentes parties du projet, de nouvelles fonctionnalités sont progressivement ajoutées afin de mettre en pratique les notions fondamentales de Python.
-
 Les principales fonctionnalités attendues sont :
-
 - ajout d'un dataset ;
 - affichage des datasets ;
 - recherche d'un dataset ;
@@ -23,17 +16,13 @@ Les principales fonctionnalités attendues sont :
 - sauvegarde dans un fichier ;
 - rechargement automatique des données ;
 - gestion des erreurs.
-
 ---
-
 # Technologies utilisées
-
 - Python 3
 - Terminal Windows
 - Git
 - GitHub
 - PyCharm
-
 ---
 
 # Structure du projet
@@ -44,11 +33,9 @@ datasetManager/
 │── README.md
 │── img/
 ```
-
 ---
 
 # Partie 1 : Types de base, variables, entrées et sorties
-
 ## Présentation
 
 Cette première partie consiste à développer une application console permettant de saisir les principales métadonnées d'un dataset puis d'afficher un résumé des informations enregistrées.
@@ -227,13 +214,6 @@ Sous Linux ou macOS, la commande équivalente est :
 
 ```python
 os.system("clear")
-```
-
----
-![img_4.png](img_4.png)
-
-```md
-```
 ---
 
 ## Résultat obtenu
@@ -244,8 +224,6 @@ os.system("clear")
 - d'ajouter un dataset ;
 - d'afficher les informations enregistrées ;
 - de quitter proprement l'application.
-
----
 ![img_5.png](img_5.png)
 Cette partie introduit les structures de contrôle nécessaires à la réalisation d'une application interactive en Python.
 
@@ -313,7 +291,197 @@ Cette partie introduit les structures de contrôle nécessaires à la réalisati
 
 Ce projet a permis de mettre progressivement en pratique les principales notions de Python, depuis les bases du langage jusqu'à l'organisation d'une application complète. Chaque partie apporte une nouvelle fonctionnalité tout en consolidant les connaissances acquises précédemment.
 
+# Partie 3 : Dictionnaires
+
+## Présentation
+
+Cette partie consiste à regrouper les différentes métadonnées d'un dataset dans une seule structure de données appelée **dictionnaire**.
+
+Au lieu de manipuler plusieurs variables indépendantes, toutes les informations relatives à un même dataset sont désormais stockées dans un seul objet. Cette organisation rend le programme plus clair, plus facile à maintenir et prépare les prochaines étapes du projet.
+
 ---
+
+## Le dictionnaire
+
+Un dictionnaire est une structure de données qui permet d'associer une **clé** à une **valeur**.
+
+Chaque information est identifiée par une clé unique, ce qui facilite son accès et sa modification.
+
+### Syntaxe
+
+```python
+nom_dictionnaire = {
+    "clé": valeur
+}
+```
+
+### Exemple
+
+```python
+dataset = {
+    "nom": "Titanic",
+    "domaine": "Transport",
+    "lignes": 891,
+    "colonnes": 12,
+    "taille": 48,
+    "format": "CSV",
+    "public": True
+}
+```
+
+Sans un dictionnaire, chaque information devrait être stockée dans une variable différente, ce qui compliquerait rapidement le développement de l'application.
+
+---
+
+## Les clés
+
+Une clé permet d'identifier une information enregistrée dans le dictionnaire.
+
+Exemple :
+
+```python
+"nom"
+"domaine"
+"lignes"
+```
+
+Chaque clé est unique et permet d'accéder directement à la valeur correspondante.
+
+---
+
+## Les valeurs
+
+La valeur représente l'information associée à une clé.
+
+Exemple :
+
+```python
+"nom": "Titanic"
+```
+
+Ici :
+
+- **clé** : `nom`
+- **valeur** : `"Titanic"`
+
+Les valeurs peuvent être de différents types (`str`, `int`, `float`, `bool`, etc.).
+
+---
+
+## Accéder à une valeur
+
+Pour récupérer une information contenue dans un dictionnaire, il suffit d'utiliser sa clé.
+
+### Syntaxe
+
+```python
+nom_dictionnaire["clé"]
+```
+
+### Exemple
+
+```python
+print(dataset["nom"])
+```
+
+Résultat :
+
+```text
+Titanic
+```
+
+---
+
+## Modifier une valeur
+
+Une valeur peut être modifiée en utilisant sa clé.
+
+### Syntaxe
+
+```python
+nom_dictionnaire["clé"] = nouvelle_valeur
+```
+
+### Exemple
+
+```python
+dataset["nom"] = "Iris"
+```
+
+La valeur associée à la clé `nom` est remplacée par **Iris**.
+
+---
+
+## Ajouter une nouvelle information
+
+Un dictionnaire peut être enrichi en ajoutant une nouvelle clé.
+
+### Exemple
+
+```python
+dataset["auteur"] = "ODC"
+```
+
+Le dictionnaire contient désormais une nouvelle information.
+
+---
+
+## Utilisation dans l'application
+
+Dans cette partie, toutes les métadonnées du dataset sont enregistrées dans un dictionnaire.
+
+Exemple :
+
+```python
+dataset = {
+    "nom": nom,
+    "domaine": domaine,
+    "lignes": lignes,
+    "colonnes": colonnes,
+    "taille": taille,
+    "format": format_dataset,
+    "public": public
+}
+```
+
+Les informations sont ensuite affichées en utilisant les différentes clés du dictionnaire.
+
+Exemple :
+
+```python
+print(dataset["nom"])
+print(dataset["domaine"])
+print(dataset["format"])
+```
+
+---
+
+## Capture d'écran
+
+> Insérer ici la capture d'écran de l'exécution de la Partie 3.
+
+```md
+![Partie 3](img/partie3.png)
+```
+
+---
+
+## Résultat obtenu
+
+À l'issue de cette partie, les métadonnées d'un dataset sont regroupées dans un dictionnaire unique.
+
+Cette organisation facilite la manipulation des informations et prépare l'application à gérer plusieurs datasets dans les prochaines parties.
+
+---
+
+## Conclusion
+
+L'utilisation des dictionnaires permet de structurer les données de manière logique en regroupant toutes les informations relatives à un même dataset. Cette structure constitue une étape importante avant l'introduction des listes, qui permettront de gérer plusieurs datasets au sein de l'application.
+![img_1.png](img_1.png)
+
+## Partie 3: Dictionnaires
+
+![img_2.png](img_2.png)
 
 # Auteur
 
