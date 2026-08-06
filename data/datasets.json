@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nom": "cardio",
+        "domaine": "Santé",
+        "lignes": 10000,
+        "colonnes": 50,
+        "taille": 48.0,
+        "format": "csv",
+        "public": true
+    },
+    {
+        "id": 2,
+        "nom": "Myope",
+        "domaine": "Finance",
+        "lignes": 152,
+        "colonnes": 25,
+        "taille": 1.0,
+        "format": "csv",
+        "public": true
+    }
+]
